@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Follow: {fileID: 249555708}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 5
+    OrthographicSize: 8
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -4769,6 +4769,7 @@ GameObject:
   - component: {fileID: 249555706}
   - component: {fileID: 249555705}
   - component: {fileID: 249555709}
+  - component: {fileID: 249555710}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -4815,7 +4816,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee1f30f1dacce1a48a18bbd316af7e35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerSpeed: 5
+  playerSpeed: 6
+  playerStealthSpeed: 1
 --- !u!212 &249555707
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4857,7 +4859,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: -1617392888, guid: 10a08d3a53e542b4abea83d72d90f3fb, type: 3}
+  m_Sprite: {fileID: -1180718704, guid: 10a08d3a53e542b4abea83d72d90f3fb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4918,6 +4920,27 @@ CapsuleCollider2D:
   m_Offset: {x: 0.009079903, y: 0.03869915}
   m_Size: {x: 0.6611683, y: 1.2351017}
   m_Direction: 0
+--- !u!95 &249555710
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249555704}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eb41639702f49ee48ab280a96aae3be9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -4980,7 +5003,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
