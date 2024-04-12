@@ -8,8 +8,10 @@ public class PlayerController : MonoBehaviour
     public float playerSpeed;
     private float playerInitialSpeed;
     public float playerStealthSpeed;
+    public float playerRunSpeed;
     private Animator playerAnimator;
     private Vector2 playerDirection;
+    private bool isAttack = false;
 
     // Start is called before the first frame update
     void Start()
@@ -32,11 +34,18 @@ public class PlayerController : MonoBehaviour
 
         Flip();
         PlayerStealth();
+        PlayerRun();
+        onAttack();
+        
+        if (isAttack)
+        {
+            playerAnimator.SetInteger("Movimento", 2);
+        }
     }
 
     void FixedUpdate()
     {   
-        playerRb.MovePosition(playerRb.position + playerDirection * playerSpeed * Time.fixedDeltaTime);
+        playerRb.MovePosition(playerRb.position + playerDirection.normalized * playerSpeed * Time.fixedDeltaTime);
     }
 
     void Flip()
@@ -61,5 +70,30 @@ public class PlayerController : MonoBehaviour
         {
             playerSpeed = playerInitialSpeed;
         }
-}
+    }
+
+    void PlayerRun(){
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            playerSpeed = playerRunSpeed;
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            playerSpeed = playerInitialSpeed;
+        }
+    }
+
+    void onAttack(){
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            isAttack = true;
+            playerSpeed = 0;
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            isAttack = false;
+            playerSpeed = playerInitialSpeed;
+        }
+    }
 }
