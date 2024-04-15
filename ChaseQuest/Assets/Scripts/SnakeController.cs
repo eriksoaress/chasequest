@@ -10,18 +10,21 @@ public class SnakeController : MonoBehaviour
     public DetectionController detectionArea;
     private SpriteRenderer spriteRenderer;
 
-    public float knockbackForce = 5f;
-    public float knockbackDuration = 0.20f;
-    private bool isKnockback = false;
-    private float knockbackTimer = 0f;
+    private Knockback knockback;
 
+    // Start is called before the first frame update
     void Start()
     {
         snakeRB = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();   
     }
 
-  
+    private void Awake()
+    {
+        knockback = GetComponent<Knockback>();
+    }
+
+    // Update is called once per frame
     void Update()
     {
         snakeDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
@@ -29,49 +32,23 @@ public class SnakeController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!isKnockback && detectionArea.detectedObjs.Count > 0)
+        if (knockback.gettingKnockedBack)
         {
-            snakeDirection = (detectionArea.detectedObjs[0].transform.position - transform.position).normalized;
-            snakeRB.MovePosition(snakeRB.position + snakeDirection * moveSpeedSnake * Time.fixedDeltaTime);
-
-            if (snakeDirection.x > 0)
-            {
-                spriteRenderer.flipX = false;
-            }
-            else
-            {
-                spriteRenderer.flipX = true;
-            }
+            return;
         }
-
-        if (isKnockback)
+        if (detectionArea.detectedObjs.Count > 0)
         {
-            snakeRB.AddForce(snakeDirection * knockbackForce, ForceMode2D.Impulse);
+        snakeDirection = (detectionArea.detectedObjs[0].transform.position - transform.position).normalized;
+        snakeRB.MovePosition(snakeRB.position + snakeDirection * moveSpeedSnake * Time.fixedDeltaTime);
 
-            knockbackTimer -= Time.fixedDeltaTime;
-
-             if (knockbackTimer <= 0)
-            {
-                isKnockback = false;
-            }
+        if (snakeDirection.x > 0)
+        {
+            spriteRenderer.flipX = false;
         }
+        else
+        {
+            spriteRenderer.flipX = true;
+        }}
     }
 
-    public void Knockback(Vector2 direction)
-    {
-        isKnockback = true;
-        knockbackTimer = knockbackDuration;
-        snakeDirection = direction;
-    }
-
-    // Handle collision with sword
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("PlayerSword"))
-        {
-            // Initialize knockback
-            Vector2 knockbackDirection = (transform.position - collision.transform.position).normalized;
-            Knockback(knockbackDirection);
-        }
-    }
 }
