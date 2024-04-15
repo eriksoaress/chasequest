@@ -1,27 +1,44 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
     public int maxHealth = 100; // Vida máxima do inimigo
-    private int currentHealth; // Vida atual do inimigo
+    public int currentHealth; // Vida atual do inimigo
+    private bool damaged; // Indica se o inimigo já foi danificado
+
+    private float damageCooldown = 0.25f; // Tempo de recarga para permitir novo dano
+    private float cooldownTimer; // Temporizador para controlar o tempo de recarga
 
     private void Start()
     {
         currentHealth = maxHealth; // Configura a vida atual para a vida máxima no início
+        cooldownTimer = damageCooldown; // Configura o temporizador para o tempo de recarga inicial
+    }
+
+    private void Update()
+    {
+        // Atualiza o temporizador de recarga
+        if (damaged)
+        {
+            cooldownTimer -= Time.deltaTime;
+            if (cooldownTimer <= 0)
+            {
+                damaged = false;
+                cooldownTimer = damageCooldown; // Reinicia o temporizador
+            }
+        }
     }
 
     // Método chamado quando este objeto colide com outro objeto que possui um Collider2D
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Verifica se o objeto com o qual colidimos tem uma "tag" específica (você pode configurar tags nos objetos no Unity Editor)
-        if (collision.gameObject.CompareTag("PlayerSword"))
+        if (collision.gameObject.CompareTag("PlayerSword") && !damaged)
         {
             // Reduz a vida do inimigo (você pode ajustar isso conforme necessário)
-            TakeDamage(50); // Reduz 10 de vida quando um projétil colide
+            TakeDamage(25); // Reduz 10 de vida quando a espada do jogador colide
 
-            // Aqui você pode adicionar qualquer lógica adicional que desejar quando um projétil colide com o inimigo
+            damaged = true; // Marca o inimigo como danificado
         }
     }
 
@@ -43,7 +60,7 @@ public class EnemyHealth : MonoBehaviour
         // Aqui você pode adicionar qualquer lógica que desejar para quando o inimigo for derrotado
         Debug.Log("O inimigo foi derrotado!");
 
-        // Por exemplo, você pode destruir o objeto do inimigo quando ele morrer
-        Destroy(gameObject);
+        // Por exemplo, você pode desativar o GameObject do inimigo quando ele morrer
+        gameObject.SetActive(false);
     }
 }
