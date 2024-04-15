@@ -35,4 +35,10 @@ public class PlayerAttack : MonoBehaviour
         isAttacking = true;
         attackArea.SetActive(true);
     }
+
+    public void OnTriggerEnter2D(Collider2D collision){
+        if(collision.gameObject.CompareTag("Enemy") && isAttacking){
+            collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(25);
+        }
+    }
 }
