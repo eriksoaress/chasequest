@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SnakeController : MonoBehaviour
+public class AnimalController : MonoBehaviour
 {
-    public float moveSpeedSnake = 3f;
-    private Vector2 snakeDirection;
-    private Rigidbody2D snakeRB;
+    public float moveSpeedAnimal = 3f;
+    private Vector2 animalDirection;
+    private Rigidbody2D animalRB;
     public DetectionController detectionArea;
     private SpriteRenderer spriteRenderer;
 
@@ -15,7 +15,7 @@ public class SnakeController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        snakeRB = GetComponent<Rigidbody2D>();
+        animalRB = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();   
     }
 
@@ -27,7 +27,7 @@ public class SnakeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        snakeDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        animalDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
     }
 
     private void FixedUpdate()
@@ -38,10 +38,10 @@ public class SnakeController : MonoBehaviour
         }
         if (detectionArea.detectedObjs.Count > 0)
         {
-        snakeDirection = (detectionArea.detectedObjs[0].transform.position - transform.position).normalized;
-        snakeRB.MovePosition(snakeRB.position + snakeDirection * moveSpeedSnake * Time.fixedDeltaTime);
+        animalDirection = (detectionArea.detectedObjs[0].transform.position - transform.position).normalized;
+        animalRB.MovePosition(animalRB.position + animalDirection * moveSpeedAnimal * Time.fixedDeltaTime);
 
-        if (snakeDirection.x > 0)
+        if (animalDirection.x > 0)
         {
             spriteRenderer.flipX = false;
         }
