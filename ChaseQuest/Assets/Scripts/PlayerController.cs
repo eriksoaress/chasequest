@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -12,6 +10,8 @@ public class PlayerController : MonoBehaviour
     private Animator playerAnimator;
     private Vector2 playerDirection;
     private bool isAttack = false;
+    private float attackTimer = 0.25f; // Tempo de duração do ataque
+    private float currentAttackTime = 0f; // Tempo atual de duração do ataque
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +28,9 @@ public class PlayerController : MonoBehaviour
         if (playerDirection.sqrMagnitude > 0)
         {
             playerAnimator.SetInteger("Movimento", 1);
-        }else{
+        }
+        else
+        {
             playerAnimator.SetInteger("Movimento", 0);
         }
 
@@ -36,10 +38,17 @@ public class PlayerController : MonoBehaviour
         PlayerStealth();
         PlayerRun();
         onAttack();
-        
+
         if (isAttack)
         {
             playerAnimator.SetInteger("Movimento", 2);
+            currentAttackTime += Time.deltaTime;
+            if (currentAttackTime >= attackTimer)
+            {
+                isAttack = false;
+                currentAttackTime = 0f; // Reinicia o temporizador de ataque
+                playerSpeed = playerInitialSpeed; // Restaura a velocidade do jogador
+            }
         }
     }
 
@@ -53,14 +62,16 @@ public class PlayerController : MonoBehaviour
         if (playerDirection.x > 0)
         {
             transform.eulerAngles = new Vector2(0, 0);
-        }else if (playerDirection.x < 0)
+        }
+        else if (playerDirection.x < 0)
         {
             transform.eulerAngles = new Vector2(0, 180);
         }
     }
     
 
-    void PlayerStealth(){
+    void PlayerStealth()
+    {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             playerSpeed = playerStealthSpeed;
@@ -72,7 +83,8 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void PlayerRun(){
+    void PlayerRun()
+    {
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             playerSpeed = playerRunSpeed;
@@ -84,16 +96,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void onAttack(){
+    void onAttack()
+    {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             isAttack = true;
             playerSpeed = 0;
-        }
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            isAttack = false;
-            playerSpeed = playerInitialSpeed;
         }
     }
 }
