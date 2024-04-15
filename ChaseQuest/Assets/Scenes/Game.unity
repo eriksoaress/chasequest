@@ -189,7 +189,7 @@ Transform:
   m_GameObject: {fileID: 24931706}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.04, y: 1.34, z: -10}
+  m_LocalPosition: {x: 32.5, y: -29.3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15369,7 +15369,7 @@ Transform:
   m_GameObject: {fileID: 249555704}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.21, y: 6.87, z: 0}
+  m_LocalPosition: {x: 32.5, y: -29.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17657,7 +17657,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.21, y: 6.87, z: -10}
+  m_LocalPosition: {x: 32.5, y: -29.3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19220,7 +19220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba2b8d890b9a26c4798d69ce3e47ae82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeedSnake: 3
+  moveSpeedAnimal: 3
   detectionArea: {fileID: 444626898}
 --- !u!70 &704409986
 CapsuleCollider2D:
@@ -19296,7 +19296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15b66912b7cb8f44d970827a57d1958a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 10000
   currentHealth: 0
 --- !u!114 &704409989
 MonoBehaviour:
