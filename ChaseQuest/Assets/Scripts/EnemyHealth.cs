@@ -9,6 +9,10 @@ public class EnemyHealth : MonoBehaviour
     private float damageCooldown = 0.25f; // Tempo de recarga para permitir novo dano
     private float cooldownTimer; // Temporizador para controlar o tempo de recarga
 
+    //pegar o togle do check do livro
+
+    public GameObject checkImage;
+
     private Knockback knockback; // Referência ao componente Knockback
 
     private void Awake(){
@@ -66,6 +70,11 @@ public class EnemyHealth : MonoBehaviour
         Debug.Log("O inimigo foi derrotado!");
 
         // Por exemplo, você pode desativar o GameObject do inimigo quando ele morrer
+
+        // dar o set na imagem para true 
+
+        checkImage.SetActive(true);
+        
         gameObject.SetActive(false);
     }
 }
