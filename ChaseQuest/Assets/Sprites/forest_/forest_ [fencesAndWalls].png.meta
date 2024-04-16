@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -121,7 +121,490 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: forest_ [fencesAndWalls]_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 132
+        width: 40
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19d3c27f7af5c334fb6351c78c7d3bca
+      internalID: -1836546975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: forest_ [fencesAndWalls]_1
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 132
+        width: 8
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 151e71701cc5a414a9816bdc979cf36b
+      internalID: -1115332921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: forest_ [fencesAndWalls]_2
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 132
+        width: 42
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae5788ab05b34824fb4df6ee523760df
+      internalID: -213890156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: forest_ [fencesAndWalls]_3
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 144
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07ea0acb98a19e04fba86adaf0c81f87
+      internalID: 1586196765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: forest_ [fencesAndWalls]_4
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 115
+        width: 58
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2916f82194037914b8f0da3f84a54146
+      internalID: 553086996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: forest_ [fencesAndWalls]_5
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 116
+        width: 40
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dccbd4cfe5a4c74086f8fea9e26ac27
+      internalID: 1333910064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: forest_ [fencesAndWalls]_6
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 116
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19c64fa74d538cf45869c3b9b0ed2019
+      internalID: -1806413893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: forest_ [fencesAndWalls]_7
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 116
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f00566cd172ea947af78fdf2d4acb6f
+      internalID: 540592161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: forest_ [fencesAndWalls]_8
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 116
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb3e3bb323af4434785cc994272bd878
+      internalID: 1336334052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: forest_ [fencesAndWalls]_9
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 112
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc92cd350a7e472459a74dcf7687bd61
+      internalID: -1593778611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: forest_ [fencesAndWalls]_10
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 83
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80acf3ff26768ca448e6466a46d81530
+      internalID: -1047149014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: forest_ [fencesAndWalls]_11
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 83
+        width: 42
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf017174b9937274998e8d757390b7fa
+      internalID: -298814211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: forest_ [fencesAndWalls]_12
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 19
+        width: 42
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b860e1ae14feffb4f9804ae41ca3ccff
+      internalID: -482941804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: forest_ [fencesAndWalls]_13
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 83
+        width: 74
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4258a37024cc3a045902508bc0ab944e
+      internalID: 1650456323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: forest_ [fencesAndWalls]_14
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 80
+        width: 10
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8600eef06f211c441a32bb9786cc105a
+      internalID: -1863918413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: forest_ [fencesAndWalls]_15
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 35
+        width: 10
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 348a6cfa1bbb60344aa971cf64e1b68f
+      internalID: 204743924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: forest_ [fencesAndWalls]_16
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 66
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab6df4a293f1229418712c81c8a02ba4
+      internalID: 1044264954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: forest_ [fencesAndWalls]_17
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 67
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d0c80983aaa347429ec1d845c280158
+      internalID: 37228932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: forest_ [fencesAndWalls]_18
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 35
+        width: 63
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba9d154871aca334b81c669f94b14bbe
+      internalID: -1932225282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: forest_ [fencesAndWalls]_19
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 51
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8db007958460f1446a7898eff87f8488
+      internalID: 1731459793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: forest_ [fencesAndWalls]_20
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 51
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c073218cd36efa4da4a01718acbfca0
+      internalID: -1877231440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: forest_ [fencesAndWalls]_21
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 35
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76315d3d4ca32994cb2e3825adfbb213
+      internalID: -1719907495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: forest_ [fencesAndWalls]_22
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 19
+        width: 42
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40f48ab19820fff4eb881487f3f314d0
+      internalID: 1666134468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +615,30 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      forest_ [fencesAndWalls]_0: -1836546975
+      forest_ [fencesAndWalls]_1: -1115332921
+      forest_ [fencesAndWalls]_10: -1047149014
+      forest_ [fencesAndWalls]_11: -298814211
+      forest_ [fencesAndWalls]_12: -482941804
+      forest_ [fencesAndWalls]_13: 1650456323
+      forest_ [fencesAndWalls]_14: -1863918413
+      forest_ [fencesAndWalls]_15: 204743924
+      forest_ [fencesAndWalls]_16: 1044264954
+      forest_ [fencesAndWalls]_17: 37228932
+      forest_ [fencesAndWalls]_18: -1932225282
+      forest_ [fencesAndWalls]_19: 1731459793
+      forest_ [fencesAndWalls]_2: -213890156
+      forest_ [fencesAndWalls]_20: -1877231440
+      forest_ [fencesAndWalls]_21: -1719907495
+      forest_ [fencesAndWalls]_22: 1666134468
+      forest_ [fencesAndWalls]_3: 1586196765
+      forest_ [fencesAndWalls]_4: 553086996
+      forest_ [fencesAndWalls]_5: 1333910064
+      forest_ [fencesAndWalls]_6: -1806413893
+      forest_ [fencesAndWalls]_7: 540592161
+      forest_ [fencesAndWalls]_8: 1336334052
+      forest_ [fencesAndWalls]_9: -1593778611
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
