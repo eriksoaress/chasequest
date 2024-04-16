@@ -16185,7 +16185,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: -10087186, guid: e3a055e41b8625a47ab12b30064d46aa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -16425,6 +16425,7 @@ GameObject:
   - component: {fileID: 249555705}
   - component: {fileID: 249555709}
   - component: {fileID: 249555710}
+  - component: {fileID: 249555712}
   - component: {fileID: 249555711}
   m_Layer: 0
   m_Name: Player
@@ -16612,6 +16613,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackArea: {fileID: 990420964}
+--- !u!114 &249555712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249555704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaca44eb81d597f44ad4af435abc29c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
 --- !u!1 &262576616
 GameObject:
   m_ObjectHideFlags: 0
