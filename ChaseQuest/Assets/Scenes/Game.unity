@@ -107398,6 +107398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+  checkImage: {fileID: 1916831884}
 --- !u!114 &1560538631
 MonoBehaviour:
   m_ObjectHideFlags: 0
