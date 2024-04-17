@@ -13,7 +13,6 @@ public class EnemyHealth : MonoBehaviour
     public GameObject player;// Temporizador para controlar o tempo de recarga
 
     //pegar o togle do check do livro
-
     public GameObject checkImage;
 
     private Knockback knockback; // Referência ao componente Knockback
@@ -55,24 +54,20 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    // // Método chamado quando este objeto colide com outro objeto que possui um Collider2D
-    // private void OnTriggerEnter2D(Collider2D collision)
-    // {
-    //     // Verifica se o objeto com o qual colidimos tem uma "tag" específica (você pode configurar tags nos objetos no Unity Editor)
-    //     if (collision.gameObject.CompareTag("PlayerSword") && !damaged)
-    //     {
-    //         // Reduz a vida do inimigo (você pode ajustar isso conforme necessário)
-    //         TakeDamage(25); // Reduz 10 de vida quando a espada do jogador colide
-
-    //         damaged = true; // Marca o inimigo como danificado
-    //     }
-    // }
 
     // Método para reduzir a vida do inimigo
     public void TakeDamage(int damage)
     {
         currentHealth -= damage; // Reduz a vida atual pelo valor do dano
-        knockback.GetKnockedBack(PlayerController.instance.transform, 10f); // Aplica o knockback no inimigo
+        if (gameObject.name.StartsWith("coiote") || gameObject.name.StartsWith("LoboTundra"))
+        {
+            knockback.GetKnockedBack(PlayerController.instance.transform, 15f);
+        }
+        else
+        {
+            knockback.GetKnockedBack(PlayerController.instance.transform, 10f);
+        }
+        damaged = true; // Aplica o knockback no inimigo
         // Verifica se a vida atual é menor ou igual a zero, indicando que o inimigo foi derrotado
         StartCoroutine(FlashRed());
         if (currentHealth <= 0)
