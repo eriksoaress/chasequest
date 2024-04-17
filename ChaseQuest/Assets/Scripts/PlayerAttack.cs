@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {   
+
+    // pegar o audio source do player para tocar o som de ataque
+    public SoundEffectsPlayer soundPlayer;
+
     public GameObject attackArea = default;
     private bool isAttacking = false;
     public float attackTime = 0.25f;
@@ -41,6 +45,8 @@ public class PlayerAttack : MonoBehaviour
     private void Attack(){
         isAttacking = true;
         attackArea.SetActive(true);
+        soundPlayer.PlayAttackSFX();
+
     }
 
     public void OnTriggerEnter2D(Collider2D collision){

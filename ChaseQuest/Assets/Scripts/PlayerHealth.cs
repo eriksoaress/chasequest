@@ -14,6 +14,7 @@ public class PlayerHealth : MonoBehaviour
     private float cooldownTimer;
 
     private Knockback knockback;
+    public SoundEffectsPlayer soundPlayer;
 
     private void Awake()
     {
@@ -46,6 +47,8 @@ public class PlayerHealth : MonoBehaviour
         {
             TakeDamage(25);
             damaged = true;
+            soundPlayer.PlayDamageSFX();
+
         }
     }
 

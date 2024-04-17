@@ -8,6 +8,8 @@ public class InputManager : MonoBehaviour
     
     public AnimalBook animalBook;
 
+    public SoundEffectsPlayer soundPlayer;
+
     // Update is called once per frame
     void Update()
     {
@@ -16,6 +18,7 @@ public class InputManager : MonoBehaviour
         {
             // Chama o método ToggleAnimalBook() do script AnimalBook
             animalBook.ToggleAnimalBook();
+            soundPlayer.PlayOpenBookSFX();
         }
         
     }
