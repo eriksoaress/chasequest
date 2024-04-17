@@ -12,11 +12,13 @@ public class PlayerController : MonoBehaviour
     private Vector2 playerDirection;
     private bool isAttack = false;
     private float attackTimer = 0.25f; // Tempo de duração do ataque
-    private float currentAttackTime = 0f; // Tempo atual de duração do ataque
+    private float currentAttackTime = 0f; 
+    private Knockback knockback;// Tempo atual de duração do ataque
 
     private void Awake()
     {
         instance = this;
+        knockback = GetComponent<Knockback>();
     }
 
     // Start is called before the first frame update
@@ -60,6 +62,10 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {   
+        if (knockback.gettingKnockedBack)
+        {
+            return;
+        }
         playerRb.MovePosition(playerRb.position + playerDirection.normalized * playerSpeed * Time.fixedDeltaTime);
     }
 

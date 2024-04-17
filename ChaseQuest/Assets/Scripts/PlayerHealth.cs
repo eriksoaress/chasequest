@@ -57,11 +57,22 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        // knockback.GetKnockedBack(PlayerController.instance.transform, 10f);
+        knockback.GetKnockedBack(AnimalController.instance.transform, 10f);
+        // deixa a tela vermelha por 1 segundo
+        StartCoroutine(FlashRed());
+
+
         if (currentHealth <= 0)
         {
             Die();
         }
+    }
+
+    private IEnumerator FlashRed()
+    {
+        GetComponent<SpriteRenderer>().color = Color.red;
+        yield return new WaitForSeconds(0.5f);
+        GetComponent<SpriteRenderer>().color = Color.white;
     }
 
     private void Die()

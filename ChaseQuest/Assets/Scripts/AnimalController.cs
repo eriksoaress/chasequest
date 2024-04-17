@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AnimalController : MonoBehaviour
-{
+{   
+    public static AnimalController instance;
     public float moveSpeedAnimal = 3f;
     private Vector2 animalDirection;
     private Rigidbody2D animalRB;
@@ -13,15 +14,15 @@ public class AnimalController : MonoBehaviour
     private Knockback knockback;
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        instance = this;
+        knockback = GetComponent<Knockback>();
+    }
     void Start()
     {
         animalRB = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();   
-    }
-
-    private void Awake()
-    {
-        knockback = GetComponent<Knockback>();
     }
 
     // Update is called once per frame
