@@ -4,7 +4,7 @@
 
 ChaseQuest é um jogo no qual o jogador vai controlar um caçador que precisa derrotar todos os tipos de criaturas que há no mundo. O jogo possui diferentes biomas e diferentes espécies de animais.
 
-Jogue essa incrível aventura [aqui]() e descubra o que o mundo de ChaseQuest tem a oferecer!
+Jogue essa incrível aventura [aqui](hhttps://gustavoantony.itch.io/chasequest) e descubra o que o mundo de ChaseQuest tem a oferecer!
 
 ## Documentação
 
