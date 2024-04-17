@@ -1,29 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI; // Importe a biblioteca UnityEngine.UI para acessar os componentes UI
 
 public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
-    private bool damaged;
+    public Slider healthSlider; // Referência para o Slider de vida
 
+    private bool damaged;
     private float damageCooldown = 0.25f;
     private float cooldownTimer;
 
     private Knockback knockback;
-    // Start is called before the first frame update
 
-    private void Awake(){
+    private void Awake()
+    {
         knockback = GetComponent<Knockback>();
     }
+
     void Start()
     {
         currentHealth = maxHealth;
         cooldownTimer = damageCooldown;
+        UpdateHealthUI(); // Atualize o Slider de vida quando o jogo começar
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (damaged)
@@ -37,15 +40,6 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    // private void OnTriggerEnter2D(Collider2D collision)
-    // {
-    //     if (collision.gameObject.CompareTag("Enemy") && !damaged)
-    //     {
-    //         TakeDamage(25);
-    //         damaged = true;
-    //     }
-    // }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy") && !damaged)
@@ -54,18 +48,19 @@ public class PlayerHealth : MonoBehaviour
             damaged = true;
         }
     }
+
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         knockback.GetKnockedBack(AnimalController.instance.transform, 10f);
-        // deixa a tela vermelha por 1 segundo
         StartCoroutine(FlashRed());
-
 
         if (currentHealth <= 0)
         {
             Die();
         }
+
+        UpdateHealthUI(); // Atualize o Slider de vida sempre que o jogador sofrer dano
     }
 
     private IEnumerator FlashRed()
@@ -79,5 +74,13 @@ public class PlayerHealth : MonoBehaviour
     {
         Debug.Log("Player died");
         gameObject.SetActive(false);
+    }
+
+    private void UpdateHealthUI()
+    {
+        if (healthSlider != null) // Verifique se a referência do Slider de vida não é nula
+        {
+            healthSlider.value = (float)currentHealth / maxHealth; // Atualize o valor do Slider
+        }
     }
 }

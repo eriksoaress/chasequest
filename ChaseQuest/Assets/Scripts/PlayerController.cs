@@ -11,8 +11,10 @@ public class PlayerController : MonoBehaviour
     private Animator playerAnimator;
     private Vector2 playerDirection;
     private bool isAttack = false;
-    private float attackTimer = 0.25f; // Tempo de duração do ataque
+    public float attackTimer = 0.25f; // Tempo de duração do ataque
     private float currentAttackTime = 0f; 
+
+    public float attackCooldown = 1f;
     private Knockback knockback;// Tempo atual de duração do ataque
 
     private void Awake()
@@ -47,7 +49,8 @@ public class PlayerController : MonoBehaviour
         PlayerRun();
         onAttack();
 
-        if (isAttack)
+
+        if (isAttack )
         {
             playerAnimator.SetInteger("Movimento", 2);
             currentAttackTime += Time.deltaTime;
@@ -56,6 +59,7 @@ public class PlayerController : MonoBehaviour
                 isAttack = false;
                 currentAttackTime = 0f; // Reinicia o temporizador de ataque
                 playerSpeed = playerInitialSpeed; // Restaura a velocidade do jogador
+                attackCooldown = 1f; // Reinicia o tempo de recarga do ataque
             }
         }
     }
@@ -109,8 +113,12 @@ public class PlayerController : MonoBehaviour
     }
 
     void onAttack()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
+    {   
+        if (attackCooldown > 0f)
+        {
+            attackCooldown -= Time.deltaTime;
+        }
+        else if (Input.GetKeyDown(KeyCode.Space))
         {
             isAttack = true;
             playerSpeed = 0;

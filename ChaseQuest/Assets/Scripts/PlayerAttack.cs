@@ -6,8 +6,10 @@ public class PlayerAttack : MonoBehaviour
 {   
     public GameObject attackArea = default;
     private bool isAttacking = false;
-    private float attackTime = 0.25f;
+    public float attackTime = 0.25f;
     private float timer = 0f;
+
+    public float attackCooldown = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,8 +19,12 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && !isAttacking){
+        if(Input.GetKeyDown(KeyCode.Space) && !isAttacking && attackCooldown <= 0f){
             Attack();
+        }
+
+        if(attackCooldown > 0f){
+            attackCooldown -= Time.deltaTime;
         }
 
         if(isAttacking){
@@ -26,6 +32,7 @@ public class PlayerAttack : MonoBehaviour
             if(timer >= attackTime){
                 isAttacking = false;
                 attackArea.SetActive(false);
+                attackCooldown = 1f;
                 timer = 0f;
             }
         }
