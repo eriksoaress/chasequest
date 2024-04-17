@@ -89,12 +89,12 @@ public class PlayerController : MonoBehaviour
 
     void PlayerStealth()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             playerSpeed = playerStealthSpeed;
         }
 
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        if (Input.GetKeyUp(KeyCode.LeftControl))
         {
             playerSpeed = playerInitialSpeed;
         }
@@ -102,12 +102,12 @@ public class PlayerController : MonoBehaviour
 
     void PlayerRun()
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             playerSpeed = playerRunSpeed;
         }
 
-        if (Input.GetKeyUp(KeyCode.LeftControl))
+        if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             playerSpeed = playerInitialSpeed;
         }
