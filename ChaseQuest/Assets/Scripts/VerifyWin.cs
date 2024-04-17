@@ -47,7 +47,7 @@ public class VerifyWin : MonoBehaviour
 
         if (win)
         {
-            SceneManager.LoadScene("Menu");
+            SceneManager.LoadScene("GameWon");
             Debug.Log("Você ganhou");
         }
     }
