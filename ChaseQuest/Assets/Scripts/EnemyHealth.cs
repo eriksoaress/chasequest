@@ -16,6 +16,8 @@ public class EnemyHealth : MonoBehaviour
 
     public GameObject checkImage;
 
+    public VerifyWin verifyWin;
+
     private Knockback knockback; // Referência ao componente Knockback
 
     private Dictionary<string, int> animalHeal = new Dictionary<string, int>();
@@ -108,6 +110,10 @@ public class EnemyHealth : MonoBehaviour
         // dar o set na imagem para true 
 
         checkImage.SetActive(true);
+
+        // pegar o script VerifyWin e chamar o metodo SetAnimal passando o nome do animal
+
+        verifyWin.SetAnimal(gameObject.name);
         
         gameObject.SetActive(false);
     }

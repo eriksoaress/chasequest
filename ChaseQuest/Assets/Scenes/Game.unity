@@ -615,6 +615,7 @@ MonoBehaviour:
   currentHealth: 0
   player: {fileID: 249555704}
   checkImage: {fileID: 351780518}
+  verifyWin: {fileID: 249555714}
 --- !u!114 &46505083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15481,6 +15482,7 @@ MonoBehaviour:
   currentHealth: 0
   player: {fileID: 249555704}
   checkImage: {fileID: 351780518}
+  verifyWin: {fileID: 249555714}
 --- !u!114 &181569427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15775,6 +15777,7 @@ MonoBehaviour:
   currentHealth: 0
   player: {fileID: 249555704}
   checkImage: {fileID: 29469717}
+  verifyWin: {fileID: 249555714}
 --- !u!114 &195461933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16405,6 +16408,7 @@ GameObject:
   - component: {fileID: 249555712}
   - component: {fileID: 249555711}
   - component: {fileID: 249555713}
+  - component: {fileID: 249555714}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -16625,6 +16629,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackTime: 0.2
+--- !u!114 &249555714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249555704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b07d2d8ba66b489caaffff0a6364330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &262576616
 GameObject:
   m_ObjectHideFlags: 0
@@ -18301,6 +18317,7 @@ MonoBehaviour:
   currentHealth: 0
   player: {fileID: 249555704}
   checkImage: {fileID: 825051699}
+  verifyWin: {fileID: 249555714}
 --- !u!95 &403856335
 Animator:
   serializedVersion: 5
@@ -18438,7 +18455,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: -1763871947, guid: c56336b2b51d0b841b048c1caf6146e5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -18780,6 +18797,7 @@ MonoBehaviour:
   currentHealth: 0
   player: {fileID: 249555704}
   checkImage: {fileID: 351780518}
+  verifyWin: {fileID: 249555714}
 --- !u!114 &443095043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19302,6 +19320,7 @@ MonoBehaviour:
   currentHealth: 0
   player: {fileID: 249555704}
   checkImage: {fileID: 1282471532}
+  verifyWin: {fileID: 249555714}
 --- !u!114 &474808679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20763,6 +20782,7 @@ MonoBehaviour:
   currentHealth: 0
   player: {fileID: 249555704}
   checkImage: {fileID: 819352631}
+  verifyWin: {fileID: 249555714}
 --- !u!114 &590698555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22409,6 +22429,7 @@ MonoBehaviour:
   currentHealth: 0
   player: {fileID: 249555704}
   checkImage: {fileID: 29469717}
+  verifyWin: {fileID: 249555714}
 --- !u!114 &747084651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23294,6 +23315,7 @@ MonoBehaviour:
   currentHealth: 0
   player: {fileID: 249555704}
   checkImage: {fileID: 2121085909}
+  verifyWin: {fileID: 249555714}
 --- !u!114 &795021100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24735,6 +24757,7 @@ MonoBehaviour:
   currentHealth: 0
   player: {fileID: 249555704}
   checkImage: {fileID: 1516638924}
+  verifyWin: {fileID: 249555714}
 --- !u!114 &877083258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26292,6 +26315,7 @@ MonoBehaviour:
   currentHealth: 0
   player: {fileID: 249555704}
   checkImage: {fileID: 981599110}
+  verifyWin: {fileID: 249555714}
 --- !u!114 &999681919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26795,6 +26819,7 @@ MonoBehaviour:
   currentHealth: 0
   player: {fileID: 249555704}
   checkImage: {fileID: 29469717}
+  verifyWin: {fileID: 249555714}
 --- !u!114 &1049219714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103490,6 +103515,7 @@ MonoBehaviour:
   currentHealth: 0
   player: {fileID: 249555704}
   checkImage: {fileID: 2121085909}
+  verifyWin: {fileID: 249555714}
 --- !u!114 &1186676303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104060,6 +104086,7 @@ MonoBehaviour:
   currentHealth: 0
   player: {fileID: 249555704}
   checkImage: {fileID: 981599110}
+  verifyWin: {fileID: 249555714}
 --- !u!114 &1236155865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107747,6 +107774,7 @@ MonoBehaviour:
   currentHealth: 0
   player: {fileID: 249555704}
   checkImage: {fileID: 1916831884}
+  verifyWin: {fileID: 249555714}
 --- !u!114 &1560538631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109173,6 +109201,7 @@ MonoBehaviour:
   currentHealth: 0
   player: {fileID: 249555704}
   checkImage: {fileID: 2121085909}
+  verifyWin: {fileID: 249555714}
 --- !u!114 &1661014821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111218,6 +111247,7 @@ MonoBehaviour:
   currentHealth: 0
   player: {fileID: 249555704}
   checkImage: {fileID: 351780518}
+  verifyWin: {fileID: 249555714}
 --- !u!114 &1814140757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113247,6 +113277,7 @@ MonoBehaviour:
   currentHealth: 0
   player: {fileID: 249555704}
   checkImage: {fileID: 459626592}
+  verifyWin: {fileID: 249555714}
 --- !u!114 &1925014822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113979,6 +114010,7 @@ MonoBehaviour:
   currentHealth: 0
   player: {fileID: 249555704}
   checkImage: {fileID: 29469717}
+  verifyWin: {fileID: 249555714}
 --- !u!114 &1989371208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114979,6 +115011,7 @@ MonoBehaviour:
   currentHealth: 0
   player: {fileID: 249555704}
   checkImage: {fileID: 1890917697}
+  verifyWin: {fileID: 249555714}
 --- !u!114 &2056445969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115116,7 +115149,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: -1393439299, guid: c56336b2b51d0b841b048c1caf6146e5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -115671,6 +115704,7 @@ MonoBehaviour:
   currentHealth: 0
   player: {fileID: 249555704}
   checkImage: {fileID: 705699132}
+  verifyWin: {fileID: 249555714}
 --- !u!95 &2113633352
 Animator:
   serializedVersion: 5
@@ -115808,7 +115842,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 10063290, guid: c56336b2b51d0b841b048c1caf6146e5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

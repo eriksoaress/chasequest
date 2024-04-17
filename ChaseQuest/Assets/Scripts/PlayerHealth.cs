@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; // Importe a biblioteca UnityEngine.UI para acessar os componentes UI
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -114,6 +115,9 @@ public class PlayerHealth : MonoBehaviour
     {
         Debug.Log("Player died");
         gameObject.SetActive(false);
+        // change scene
+        SceneManager.LoadScene("Game Over");
+
     }
 
     private void UpdateHealthUI()
