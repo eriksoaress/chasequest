@@ -15,11 +15,24 @@ public class PlayerHealth : MonoBehaviour
 
     private Knockback knockback;
 
+    private Dictionary<string, int> animalDamage = new Dictionary<string, int>();
+
     private void Awake()
     {
         knockback = GetComponent<Knockback>();
+        animalDamage.Add("snake",15);
+        animalDamage.Add("sheep",10);
+        animalDamage.Add("SnakeDesert",20);
+        animalDamage.Add("RatoDesert",10);
+        animalDamage.Add("coiote",30);
+        animalDamage.Add("UrsoPardo",40);
+        animalDamage.Add("CobraTaiga",20);
+        animalDamage.Add("prea",10);
+        animalDamage.Add("loboguara",30);
+        animalDamage.Add("UrsoNegro",50);
+        animalDamage.Add("LoboTundra",20);
+        animalDamage.Add("CobraGelida",25);
     }
-
     void Start()
     {
         currentHealth = maxHealth;
@@ -43,9 +56,18 @@ public class PlayerHealth : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy") && !damaged)
-        {
-            TakeDamage(25);
-            damaged = true;
+        {   
+            string enemyName = collision.gameObject.name;
+            foreach (var animal in animalDamage)
+            {
+                if (enemyName.StartsWith(animal.Key))
+                {
+                    Debug.Log("Dano por: " + animal.Key);
+                    TakeDamage(animal.Value);
+                    damaged = true;
+                    break; // Saia do loop após encontrar o animal correspondente
+                }
+            }
         }
     }
 
@@ -63,6 +85,16 @@ public class PlayerHealth : MonoBehaviour
         UpdateHealthUI(); // Atualize o Slider de vida sempre que o jogador sofrer dano
     }
 
+    public void Heal(int heal){
+        currentHealth += heal;
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+        StartCoroutine(FlashGreen());
+        UpdateHealthUI();
+    }
+
     private IEnumerator FlashRed()
     {
         GetComponent<SpriteRenderer>().color = Color.red;
@@ -70,6 +102,12 @@ public class PlayerHealth : MonoBehaviour
         GetComponent<SpriteRenderer>().color = Color.white;
     }
 
+    private IEnumerator FlashGreen()
+    {
+        GetComponent<SpriteRenderer>().color = Color.green;
+        yield return new WaitForSeconds(0.3f);
+        GetComponent<SpriteRenderer>().color = Color.white;
+    }
     private void Die()
     {
         Debug.Log("Player died");

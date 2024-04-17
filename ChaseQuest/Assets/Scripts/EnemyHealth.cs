@@ -9,7 +9,8 @@ public class EnemyHealth : MonoBehaviour
     private bool damaged; // Indica se o inimigo já foi danificado
 
     private float damageCooldown = 0.25f; // Tempo de recarga para permitir novo dano
-    private float cooldownTimer; // Temporizador para controlar o tempo de recarga
+    private float cooldownTimer; 
+    public GameObject player;// Temporizador para controlar o tempo de recarga
 
     //pegar o togle do check do livro
 
@@ -17,8 +18,22 @@ public class EnemyHealth : MonoBehaviour
 
     private Knockback knockback; // Referência ao componente Knockback
 
+    private Dictionary<string, int> animalHeal = new Dictionary<string, int>();
+
     private void Awake(){
         knockback = GetComponent<Knockback>();
+        animalHeal.Add("snake",3);
+        animalHeal.Add("sheep",2);
+        animalHeal.Add("SnakeDesert",4);
+        animalHeal.Add("RatoDesert",2);
+        animalHeal.Add("coiote",6);
+        animalHeal.Add("UrsoPardo",8);
+        animalHeal.Add("CobraTaiga",4);
+        animalHeal.Add("prea",2);
+        animalHeal.Add("loboguara",6);
+        animalHeal.Add("UrsoNegro",10);
+        animalHeal.Add("LoboTundra",6);
+        animalHeal.Add("CobraGelida",5);
     }
     private void Start()
     {
@@ -75,7 +90,16 @@ public class EnemyHealth : MonoBehaviour
 
     // Método chamado quando o inimigo é derrotado
     private void Die()
-    {
+    {   
+        // Adiciona a vida do inimigo ao jogador
+        foreach (var animal in animalHeal)
+        {
+            if (gameObject.name.StartsWith(animal.Key))
+            {
+                player.GetComponent<PlayerHealth>().Heal(animal.Value);
+                break; // Saia do loop após encontrar o animal correspondente
+            }
+        }
         // Aqui você pode adicionar qualquer lógica que desejar para quando o inimigo for derrotado
         Debug.Log("O"+ gameObject.name +"foi derrotado!");
 
