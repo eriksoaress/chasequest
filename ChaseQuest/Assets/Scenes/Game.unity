@@ -16401,6 +16401,7 @@ GameObject:
   - component: {fileID: 249555710}
   - component: {fileID: 249555712}
   - component: {fileID: 249555711}
+  - component: {fileID: 249555713}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -16450,6 +16451,8 @@ MonoBehaviour:
   playerSpeed: 6
   playerStealthSpeed: 1
   playerRunSpeed: 8
+  attackTimer: 0.25
+  attackCooldown: 1
 --- !u!212 &249555707
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16587,6 +16590,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackArea: {fileID: 990420964}
+  attackTime: 0.25
+  attackCooldown: 0
 --- !u!114 &249555712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16601,6 +16606,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+  healthSlider: {fileID: 779496089}
+--- !u!114 &249555713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249555704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31ce22c66fea5d948bbdee814bb81f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackTime: 0.2
 --- !u!1 &262576616
 GameObject:
   m_ObjectHideFlags: 0
